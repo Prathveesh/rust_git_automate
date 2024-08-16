@@ -1,5 +1,4 @@
 use std::process::{Command, exit};
-use names::Generator;
 
 fn update_commit_push() {
     let add_command = Command::new("git")
@@ -16,7 +15,7 @@ fn update_commit_push() {
     let commit_command = Command::new("git")
         .arg("commit")
         .arg("-m")
-        .arg(name_gen())
+        .arg("Commiting latest changes")
         .output()
         .expect("Failed to execute git commit command");
 
@@ -39,10 +38,7 @@ fn update_commit_push() {
 
     println!("Changes are successfully added, committed, and pushed.");
 }
-fn name_gen() -> String{
-let mut generator = Generator::default();
-    generator.next().unwrap()
-}
+
 fn main() {
     update_commit_push();
 }
