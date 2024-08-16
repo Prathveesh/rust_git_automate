@@ -1,5 +1,5 @@
 use std::process::{Command, exit};
-use extern crate names::Generator;
+use names::Generator;
 
 fn update_commit_push() {
     let add_command = Command::new("git")
